@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roof Shade top floor cooling and heating Percentage reduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Use sans-serif font */
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Set background color */
+        }
+        h1 {
+            color: #333333; /* Set heading color */
+        }
+        form {
+            background-color: #ffffff; /* Set form background color */
+            padding: 20px;
+            border-radius: 10px; /* Add rounded corners to form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green hover color */
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Roof Shade top floor cooling and heating Percentage reduction</h1></center>
+    <form id="prediction-form" method="post" action="/predict">
+        <label>Climatic Zone:</label><br>
+        <select name="ClimaticZone">
+            <option value="Hot and Dry">Hot and Dry</option>
+            <option value="Composite">Composite</option>
+            <option value="Temperate">Temperate</option>
+            <option value="Warm and Humid">Warm and Humid</option>
+        </select><br><br>
+        <label>Shade Direction:</label><br>
+        <select name="ShadeDirection">
+            <option value="East">East</option>
+            <option value="West">West</option>
+            <option value="North">North</option>
+            <option value="South">South</option>
+        </select><br><br>
+        <label>Building Orientation:</label><br>
+        <select name="BuildingOrientation">
+            <option value="0">0</option>
+            <option value="90">90</option>
+        </select><br><br>
+        <label>Latitude (Deg North):</label><br>
+        <input type="number" name="Latitude" step="0.0001"><br><br>
+
+        <label>Longitude (Deg East):</label><br>
+        <input type="number" name="Longitude" step="0.0001"><br><br>
+
+        <label>Shade extent:</label><br>
+        <input type="number" name="ShadeExtent" step="0.01"><br><br>
+
+        <label>Roof U-Value (W/m2K):</label><br>
+        <input type="number" name="RoofUValue" step="0.01"><br><br>
+
+        <label>Height of Shade (m):</label><br>
+        <input type="number" name="HeightofShade"><br><br>
+
+        <label>Shading Transmittance:</label><br>
+        <input type="number" name="ShadingTransmittance" step="0.01"><br><br>
+
+
+
+        <input type="submit" value="Predict"><br><br>
+    </form>
+    {% if result %}
+    <p>The predicted Top Floor cooling and Heating Load savings: {{result}} %</p>
+    {% endif %}
+</body>
+</html>

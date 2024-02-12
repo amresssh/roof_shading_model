@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roof Shade top floor cooling and heating Percentage reduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Use sans-serif font */
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Set background color */
+        }
+        h1 {
+            color: #333333; /* Set heading color */
+        }
+        form {
+            background-color: #ffffff; /* Set form background color */
+            padding: 20px;
+            border-radius: 10px; /* Add rounded corners to form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green hover color */
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    {% if result %}
+    <p>The predicted Top Floor cooling and Heating Load savings: {{result}} %</p>
+    {% endif %}
+    {% if result %}
+    <p>The predicted Equivalent U-Value for the given Roof Shade: {{result_uval}} W/m2K</p>
+    {% endif %}
+</body>
+</html>
